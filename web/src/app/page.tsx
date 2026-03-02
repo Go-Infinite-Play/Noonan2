@@ -10,11 +10,11 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <Image
-            src="/noonan-logo.png"
+            src="/noonan-logo-white.png"
             alt="Noonan"
             width={140}
             height={40}
-            className="h-8 w-auto brightness-0 invert"
+            className="h-8 w-auto"
             priority
           />
           <a
@@ -285,7 +285,7 @@ export default function Home() {
         <footer className="py-12 px-6 border-t border-[var(--green-deep)]/10 bg-[var(--cream)]">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <Image
-              src="/noonan-logo.png"
+              src="/noonan-logo-transparent.png"
               alt="Noonan"
               width={100}
               height={28}
