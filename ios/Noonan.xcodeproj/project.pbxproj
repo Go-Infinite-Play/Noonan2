@@ -16,6 +16,9 @@
 		A5B6C7D8E9FA5BECF3A4B5C6 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6C7D8E9FA5BECF3A4B5C7 /* Conversation.swift */; };
 		A6B7C8D9EAFB6CFDA4B5C6D7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B7C8D9EAFB6CFDA4B5C6D8 /* Message.swift */; };
 		A7B8C9DAEBFC7DAEB5C6D7E8 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8C9DAEBFC7DAEB5C6D7E9 /* Course.swift */; };
+		D1E2F3A4B5C647D8E9F0A1B2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D2E3F4A5B647C8D9E0F1A2 /* AuthViewModel.swift */; };
+		D2E3F4A5B6C748D9E0F1A2B3 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D3E4F5A6B748C9D0E1F2A3 /* AuthView.swift */; };
+		D3E4F5A6B7C849DAF1A2B3C4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4E5F6A7B849CAE1F2A3B4 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		A5B6C7D8E9FA5BECF3A4B5C7 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		A6B7C8D9EAFB6CFDA4B5C6D8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A7B8C9DAEBFC7DAEB5C6D7E9 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		C1D2E3F4A5B647C8D9E0F1A2 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C2D3E4F5A6B748C9D0E1F2A3 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		C3D4E5F6A7B849CAE1F2A3B4 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 				A1B2C3D4E5F647A8B9C0D1E3 /* Config.swift */,
 				A2B3C4D5E6F748B9C0D1E2F4 /* SupabaseClient.swift */,
 				B1C2D3E4F5A647B8C9D0E1F2 /* Models */,
+				E1F2A3B4C5D647E8F9A0B1C2 /* ViewModels */,
+				E2F3A4B5C6D748E9F0A1B2C3 /* Views */,
 			);
 			path = Noonan;
 			sourceTree = "<group>";
@@ -72,6 +80,23 @@
 				A7B8C9DAEBFC7DAEB5C6D7E9 /* Course.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E1F2A3B4C5D647E8F9A0B1C2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C1D2E3F4A5B647C8D9E0F1A2 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E2F3A4B5C6D748E9F0A1B2C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2D3E4F5A6B748C9D0E1F2A3 /* AuthView.swift */,
+				C3D4E5F6A7B849CAE1F2A3B4 /* MainTabView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1383A2DB70DC4EA7AB1E4ACB /* Products */ = {
@@ -165,6 +190,9 @@
 				A5B6C7D8E9FA5BECF3A4B5C6 /* Conversation.swift in Sources */,
 				A6B7C8D9EAFB6CFDA4B5C6D7 /* Message.swift in Sources */,
 				A7B8C9DAEBFC7DAEB5C6D7E8 /* Course.swift in Sources */,
+				D1E2F3A4B5C647D8E9F0A1B2 /* AuthViewModel.swift in Sources */,
+				D2E3F4A5B6C748D9E0F1A2B3 /* AuthView.swift in Sources */,
+				D3E4F5A6B7C849DAF1A2B3C4 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

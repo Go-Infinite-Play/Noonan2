@@ -1,11 +1,20 @@
 import SwiftUI
-import Supabase
 
 @main
 struct NoonanApp: App {
+    @StateObject private var authVM = AuthViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if authVM.isLoading {
+                    ProgressView()
+                } else if authVM.isAuthenticated {
+                    MainTabView(authVM: authVM)
+                } else {
+                    AuthView(authVM: authVM)
+                }
+            }
         }
     }
 }
