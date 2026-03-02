@@ -59,6 +59,17 @@ struct AuthView: View {
             }
             .padding(.horizontal, 40)
 
+            #if DEBUG
+            Button {
+                authVM.isAuthenticated = true
+            } label: {
+                Text("Skip Login (Debug)")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.top, 8)
+            #endif
+
             Spacer()
                 .frame(height: 60)
         }
