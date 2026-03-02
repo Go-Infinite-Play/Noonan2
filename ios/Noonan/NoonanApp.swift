@@ -9,10 +9,12 @@ struct NoonanApp: App {
             Group {
                 if authVM.isLoading {
                     ProgressView()
-                } else if authVM.isAuthenticated {
-                    MainTabView(authVM: authVM)
-                } else {
+                } else if !authVM.isAuthenticated {
                     AuthView(authVM: authVM)
+                } else if authVM.needsOnboarding {
+                    OnboardingView(authVM: authVM)
+                } else {
+                    MainTabView(authVM: authVM)
                 }
             }
             .onOpenURL { url in

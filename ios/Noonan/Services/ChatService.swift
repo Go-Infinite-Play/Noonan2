@@ -70,4 +70,38 @@ class ChatService {
             .execute()
             .value
     }
+
+    func createFirstConversation(introMessage: String) async throws -> UUID {
+        let session = try await supabase.auth.session
+
+        struct ConvInsert: Encodable {
+            let user_id: String
+            let conversation_type: String
+        }
+
+        let conv: Conversation = try await supabase
+            .from("conversations")
+            .insert(ConvInsert(user_id: session.user.id.uuidString, conversation_type: "general"))
+            .select()
+            .single()
+            .execute()
+            .value
+
+        struct MsgInsert: Encodable {
+            let conversation_id: String
+            let role: String
+            let content: String
+        }
+
+        try await supabase
+            .from("messages")
+            .insert(MsgInsert(
+                conversation_id: conv.id.uuidString,
+                role: "assistant",
+                content: introMessage
+            ))
+            .execute()
+
+        return conv.id
+    }
 }

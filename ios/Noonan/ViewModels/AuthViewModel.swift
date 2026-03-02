@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import Supabase
 import AuthenticationServices
 
@@ -7,6 +8,11 @@ class AuthViewModel: ObservableObject {
     @Published var isAuthenticated = false
     @Published var isLoading = true
     @Published var errorMessage: String?
+    @AppStorage("hasCompletedOnboarding") var hasCompletedOnboarding = false
+
+    var needsOnboarding: Bool {
+        isAuthenticated && !hasCompletedOnboarding
+    }
 
     init() {
         Task {
@@ -16,12 +22,30 @@ class AuthViewModel: ObservableObject {
 
     func checkSession() async {
         do {
-            _ = try await supabase.auth.session
+            let session = try await supabase.auth.session
             isAuthenticated = true
+
+            // Check if user already onboarded (for returning users / new devices)
+            if !hasCompletedOnboarding {
+                let response = try await supabase
+                    .from("users")
+                    .select()
+                    .eq("id", value: session.user.id)
+                    .execute()
+
+                let users: [AppUser] = try JSONDecoder().decode([AppUser].self, from: response.data)
+                if let name = users.first?.displayName, name != "Golfer", !name.isEmpty {
+                    hasCompletedOnboarding = true
+                }
+            }
         } catch {
             isAuthenticated = false
         }
         isLoading = false
+    }
+
+    func completeOnboarding() {
+        hasCompletedOnboarding = true
     }
 
     func signInWithApple(authorization: ASAuthorization) async {
@@ -50,7 +74,6 @@ class AuthViewModel: ObservableObject {
                 provider: .google,
                 redirectTo: URL(string: "com.noonan.Noonan://login-callback")
             )
-            // Auth state will be picked up by the onOpenURL handler
         } catch {
             print("Google sign in error: \(error)")
         }
@@ -97,6 +120,7 @@ class AuthViewModel: ObservableObject {
         do {
             try await supabase.auth.signOut()
             isAuthenticated = false
+            hasCompletedOnboarding = false
         } catch {
             print("Sign out error: \(error)")
         }

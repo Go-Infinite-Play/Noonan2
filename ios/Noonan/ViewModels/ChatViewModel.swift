@@ -5,10 +5,34 @@ class ChatViewModel: ObservableObject {
     @Published var messages: [ChatMessage] = []
     @Published var isLoading = false
     @Published var conversationId: UUID?
+    @Published var suggestedReplies: [String] = []
 
     private let chatService = ChatService()
 
+    func loadInitialState() async {
+        do {
+            let conversations = try await chatService.loadConversations()
+            if let latest = conversations.first {
+                conversationId = latest.id
+                messages = try await chatService.loadMessages(conversationId: latest.id)
+
+                // Show suggested replies if only the intro message exists
+                if messages.count == 1 && messages.first?.role == "assistant" {
+                    suggestedReplies = [
+                        "I just played a round",
+                        "I'm playing soon",
+                        "Tell me about yourself"
+                    ]
+                }
+            }
+        } catch {
+            print("Load initial state error: \(error)")
+        }
+    }
+
     func sendMessage(_ text: String) async {
+        suggestedReplies = []
+
         let userMessage = ChatMessage(
             id: UUID(),
             conversationId: conversationId ?? UUID(),
@@ -38,7 +62,6 @@ class ChatViewModel: ObservableObject {
             }
         } catch {
             print("Send message error: \(error)")
-            // Remove the optimistic user message on error
             messages.removeLast()
         }
 
@@ -57,5 +80,6 @@ class ChatViewModel: ObservableObject {
     func startNewConversation() {
         conversationId = nil
         messages = []
+        suggestedReplies = []
     }
 }

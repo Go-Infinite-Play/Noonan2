@@ -38,6 +38,32 @@ struct ChatView: View {
                     }
                 }
 
+                // Suggested quick replies
+                if !viewModel.suggestedReplies.isEmpty {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 8) {
+                            ForEach(viewModel.suggestedReplies, id: \.self) { reply in
+                                Button {
+                                    Task { await viewModel.sendMessage(reply) }
+                                } label: {
+                                    Text(reply)
+                                        .font(.subheadline)
+                                        .padding(.horizontal, 14)
+                                        .padding(.vertical, 8)
+                                        .background(Color(.systemGray6))
+                                        .foregroundColor(.primary)
+                                        .clipShape(Capsule())
+                                        .overlay(
+                                            Capsule().stroke(Color.green, lineWidth: 1)
+                                        )
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                        .padding(.vertical, 8)
+                    }
+                }
+
                 Divider()
 
                 HStack(spacing: 12) {
@@ -72,6 +98,9 @@ struct ChatView: View {
                         Image(systemName: "plus.message")
                     }
                 }
+            }
+            .task {
+                await viewModel.loadInitialState()
             }
         }
     }

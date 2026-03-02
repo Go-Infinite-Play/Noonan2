@@ -9,13 +9,14 @@ class ProfileViewModel: ObservableObject {
         isLoading = true
         do {
             let session = try await supabase.auth.session
-            user = try await supabase
+            let response = try await supabase
                 .from("users")
                 .select()
                 .eq("id", value: session.user.id)
-                .single()
                 .execute()
-                .value
+
+            let users: [AppUser] = try JSONDecoder().decode([AppUser].self, from: response.data)
+            user = users.first
         } catch {
             print("Load profile error: \(error)")
         }
