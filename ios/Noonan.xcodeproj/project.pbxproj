@@ -9,12 +9,26 @@
 /* Begin PBXBuildFile section */
 		265B6E91D2C64428BE348CAC /* NoonanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1901B6D05743F8B54C0CE5 /* NoonanApp.swift */; };
 		3BF4704592DB4B5183B5DC0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0E0172EF9548AB882E0E83 /* ContentView.swift */; };
+		A1B2C3D4E5F647A8B9C0D1E2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F647A8B9C0D1E3 /* Config.swift */; };
+		A2B3C4D5E6F748B9C0D1E2F3 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B3C4D5E6F748B9C0D1E2F4 /* SupabaseClient.swift */; };
+		A3B4C5D6E7F849CAD1E2F3A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B4C5D6E7F849CAD1E2F3A5 /* User.swift */; };
+		A4B5C6D7E8F94ADBE2F3A4B5 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B5C6D7E8F94ADBE2F3A4B6 /* Round.swift */; };
+		A5B6C7D8E9FA5BECF3A4B5C6 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B6C7D8E9FA5BECF3A4B5C7 /* Conversation.swift */; };
+		A6B7C8D9EAFB6CFDA4B5C6D7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B7C8D9EAFB6CFDA4B5C6D8 /* Message.swift */; };
+		A7B8C9DAEBFC7DAEB5C6D7E8 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8C9DAEBFC7DAEB5C6D7E9 /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9C1901B6D05743F8B54C0CE5 /* NoonanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoonanApp.swift; sourceTree = "<group>"; };
 		DB0E0172EF9548AB882E0E83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		149A5DCDAD174255840E9C62 /* Noonan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noonan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D4E5F647A8B9C0D1E3 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		A2B3C4D5E6F748B9C0D1E2F4 /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseClient.swift; sourceTree = "<group>"; };
+		A3B4C5D6E7F849CAD1E2F3A5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A4B5C6D7E8F94ADBE2F3A4B6 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
+		A5B6C7D8E9FA5BECF3A4B5C7 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		A6B7C8D9EAFB6CFDA4B5C6D8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A7B8C9DAEBFC7DAEB5C6D7E9 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,8 +55,23 @@
 			children = (
 				9C1901B6D05743F8B54C0CE5 /* NoonanApp.swift */,
 				DB0E0172EF9548AB882E0E83 /* ContentView.swift */,
+				A1B2C3D4E5F647A8B9C0D1E3 /* Config.swift */,
+				A2B3C4D5E6F748B9C0D1E2F4 /* SupabaseClient.swift */,
+				B1C2D3E4F5A647B8C9D0E1F2 /* Models */,
 			);
 			path = Noonan;
+			sourceTree = "<group>";
+		};
+		B1C2D3E4F5A647B8C9D0E1F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A3B4C5D6E7F849CAD1E2F3A5 /* User.swift */,
+				A4B5C6D7E8F94ADBE2F3A4B6 /* Round.swift */,
+				A5B6C7D8E9FA5BECF3A4B5C7 /* Conversation.swift */,
+				A6B7C8D9EAFB6CFDA4B5C6D8 /* Message.swift */,
+				A7B8C9DAEBFC7DAEB5C6D7E9 /* Course.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		1383A2DB70DC4EA7AB1E4ACB /* Products */ = {
@@ -129,6 +158,13 @@
 			files = (
 				265B6E91D2C64428BE348CAC /* NoonanApp.swift in Sources */,
 				3BF4704592DB4B5183B5DC0C /* ContentView.swift in Sources */,
+				A1B2C3D4E5F647A8B9C0D1E2 /* Config.swift in Sources */,
+				A2B3C4D5E6F748B9C0D1E2F3 /* SupabaseClient.swift in Sources */,
+				A3B4C5D6E7F849CAD1E2F3A4 /* User.swift in Sources */,
+				A4B5C6D7E8F94ADBE2F3A4B5 /* Round.swift in Sources */,
+				A5B6C7D8E9FA5BECF3A4B5C6 /* Conversation.swift in Sources */,
+				A6B7C8D9EAFB6CFDA4B5C6D7 /* Message.swift in Sources */,
+				A7B8C9DAEBFC7DAEB5C6D7E8 /* Course.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
