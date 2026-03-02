@@ -6,6 +6,7 @@ import AuthenticationServices
 class AuthViewModel: ObservableObject {
     @Published var isAuthenticated = false
     @Published var isLoading = true
+    @Published var errorMessage: String?
 
     init() {
         Task {
@@ -61,6 +62,34 @@ class AuthViewModel: ObservableObject {
             isAuthenticated = true
         } catch {
             print("Deep link auth error: \(error)")
+        }
+    }
+
+    func signUpWithEmail(email: String, password: String) async {
+        errorMessage = nil
+        do {
+            _ = try await supabase.auth.signUp(
+                email: email,
+                password: password
+            )
+            isAuthenticated = true
+        } catch {
+            errorMessage = error.localizedDescription
+            print("Email sign up error: \(error)")
+        }
+    }
+
+    func signInWithEmail(email: String, password: String) async {
+        errorMessage = nil
+        do {
+            _ = try await supabase.auth.signIn(
+                email: email,
+                password: password
+            )
+            isAuthenticated = true
+        } catch {
+            errorMessage = error.localizedDescription
+            print("Email sign in error: \(error)")
         }
     }
 
