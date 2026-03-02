@@ -26,6 +26,7 @@
 		E5F6A7B8C9DA5BFCA4B5C6D7 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A6B7C8D9EA5AFCB4C5D6E7 /* ChatViewModel.swift */; };
 		E6F7A8B9CADA6BFDB5C6D7E8 /* RoundsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A7B8C9DAEB6AFDC5D6E7F8 /* RoundsViewModel.swift */; };
 		E7F8A9BADBED7CFEC6D7E8F9 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A8B9CADBED7BFED6E7F8A9 /* ProfileViewModel.swift */; };
+		T2A3B4C5D6E748F9B0C1D2E3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = T1A2B3C4D5E647F8A9B0C1D2 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		F5A6B7C8D9EA5AFCB4C5D6E7 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		F6A7B8C9DAEB6AFDC5D6E7F8 /* RoundsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsViewModel.swift; sourceTree = "<group>"; };
 		F7A8B9CADBED7BFED6E7F8A9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		T1A2B3C4D5E647F8A9B0C1D2 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				9C1901B6D05743F8B54C0CE5 /* NoonanApp.swift */,
 				A1B2C3D4E5F647A8B9C0D1E3 /* Config.swift */,
+				T1A2B3C4D5E647F8A9B0C1D2 /* Theme.swift */,
 				A2B3C4D5E6F748B9C0D1E2F4 /* SupabaseClient.swift */,
 				B1C2D3E4F5A647B8C9D0E1F2 /* Models */,
 				F1A2B3C4D5E647F8A9B0C1D2 /* Services */,
@@ -229,6 +232,7 @@
 				E5F6A7B8C9DA5BFCA4B5C6D7 /* ChatViewModel.swift in Sources */,
 				E6F7A8B9CADA6BFDB5C6D7E8 /* RoundsViewModel.swift in Sources */,
 				E7F8A9BADBED7CFEC6D7E8F9 /* ProfileViewModel.swift in Sources */,
+				T2A3B4C5D6E748F9B0C1D2E3 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
