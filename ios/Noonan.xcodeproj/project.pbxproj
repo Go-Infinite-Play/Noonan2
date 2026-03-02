@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		265B6E91D2C64428BE348CAC /* NoonanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1901B6D05743F8B54C0CE5 /* NoonanApp.swift */; };
-		3BF4704592DB4B5183B5DC0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0E0172EF9548AB882E0E83 /* ContentView.swift */; };
 		A1B2C3D4E5F647A8B9C0D1E2 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F647A8B9C0D1E3 /* Config.swift */; };
+		B1A2B3C4D5E6F7A8B9C0D1E2 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A2B3C4D5E6F7A8B9C0D1E3 /* ChatView.swift */; };
+		B2A3B4C5D6E7F8B9C0D1E2F3 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A3B4C5D6E7F8B9C0D1E2F4 /* MessageBubble.swift */; };
+		B3A4B5C6D7E8F9CAD1E2F3A4 /* RoundsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A4B5C6D7E8F9CAD1E2F3A5 /* RoundsView.swift */; };
+		B4A5B6C7D8E9FADBE2F3A4B5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5B6C7D8E9FADBE2F3A4B6 /* ProfileView.swift */; };
 		A2B3C4D5E6F748B9C0D1E2F3 /* SupabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B3C4D5E6F748B9C0D1E2F4 /* SupabaseClient.swift */; };
 		A3B4C5D6E7F849CAD1E2F3A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B4C5D6E7F849CAD1E2F3A5 /* User.swift */; };
 		A4B5C6D7E8F94ADBE2F3A4B5 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B5C6D7E8F94ADBE2F3A4B6 /* Round.swift */; };
@@ -25,8 +28,11 @@
 
 /* Begin PBXFileReference section */
 		9C1901B6D05743F8B54C0CE5 /* NoonanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoonanApp.swift; sourceTree = "<group>"; };
-		DB0E0172EF9548AB882E0E83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		149A5DCDAD174255840E9C62 /* Noonan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Noonan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A2B3C4D5E6F7A8B9C0D1E3 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		B2A3B4C5D6E7F8B9C0D1E2F4 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		B3A4B5C6D7E8F9CAD1E2F3A5 /* RoundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsView.swift; sourceTree = "<group>"; };
+		B4A5B6C7D8E9FADBE2F3A4B6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F647A8B9C0D1E3 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A2B3C4D5E6F748B9C0D1E2F4 /* SupabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseClient.swift; sourceTree = "<group>"; };
 		A3B4C5D6E7F849CAD1E2F3A5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -64,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				9C1901B6D05743F8B54C0CE5 /* NoonanApp.swift */,
-				DB0E0172EF9548AB882E0E83 /* ContentView.swift */,
 				A1B2C3D4E5F647A8B9C0D1E3 /* Config.swift */,
 				A2B3C4D5E6F748B9C0D1E2F4 /* SupabaseClient.swift */,
 				B1C2D3E4F5A647B8C9D0E1F2 /* Models */,
@@ -100,7 +105,11 @@
 			isa = PBXGroup;
 			children = (
 				C2D3E4F5A6B748C9D0E1F2A3 /* AuthView.swift */,
+				B1A2B3C4D5E6F7A8B9C0D1E3 /* ChatView.swift */,
 				C3D4E5F6A7B849CAE1F2A3B4 /* MainTabView.swift */,
+				B2A3B4C5D6E7F8B9C0D1E2F4 /* MessageBubble.swift */,
+				B4A5B6C7D8E9FADBE2F3A4B6 /* ProfileView.swift */,
+				B3A4B5C6D7E8F9CAD1E2F3A5 /* RoundsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,7 +205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				265B6E91D2C64428BE348CAC /* NoonanApp.swift in Sources */,
-				3BF4704592DB4B5183B5DC0C /* ContentView.swift in Sources */,
 				A1B2C3D4E5F647A8B9C0D1E2 /* Config.swift in Sources */,
 				A2B3C4D5E6F748B9C0D1E2F3 /* SupabaseClient.swift in Sources */,
 				A3B4C5D6E7F849CAD1E2F3A4 /* User.swift in Sources */,
@@ -207,6 +215,10 @@
 				D1E2F3A4B5C647D8E9F0A1B2 /* AuthViewModel.swift in Sources */,
 				D2E3F4A5B6C748D9E0F1A2B3 /* AuthView.swift in Sources */,
 				D3E4F5A6B7C849DAF1A2B3C4 /* MainTabView.swift in Sources */,
+				B1A2B3C4D5E6F7A8B9C0D1E2 /* ChatView.swift in Sources */,
+				B2A3B4C5D6E7F8B9C0D1E2F3 /* MessageBubble.swift in Sources */,
+				B3A4B5C6D7E8F9CAD1E2F3A4 /* RoundsView.swift in Sources */,
+				B4A5B6C7D8E9FADBE2F3A4B5 /* ProfileView.swift in Sources */,
 				E4F5A6B7C8D94AEBF2A3B4C5 /* ChatService.swift in Sources */,
 				E5F6A7B8C9DA5BFCA4B5C6D7 /* ChatViewModel.swift in Sources */,
 			);
