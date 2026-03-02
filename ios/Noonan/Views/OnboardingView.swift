@@ -326,18 +326,20 @@ private struct IntroStep: View {
 
             Button {
                 Task {
+                    // Try server-side onboarding, but don't block on failure
+                    // (e.g. debug mode has no real auth session)
                     do {
                         try await vm.completeOnboarding()
-
                         let chatService = ChatService()
                         _ = try? await chatService.createFirstConversation(
                             introMessage: vm.noonanIntroMessage
                         )
-
-                        authVM.completeOnboarding()
                     } catch {
-                        // error already set in vm
+                        // Server call failed (likely no auth session in debug mode)
+                        // Still proceed - the data just won't be persisted
+                        print("Onboarding server call failed, proceeding anyway: \(error)")
                     }
+                    authVM.completeOnboarding()
                 }
             } label: {
                 if vm.isSubmitting {
