@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -8,14 +9,14 @@ export default function Home() {
       {/* Nav - appears over dark hero */}
       <nav className="fixed top-0 left-0 right-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-[var(--green-fairway)] flex items-center justify-center">
-              <span className="text-white text-sm font-bold" style={{ fontFamily: "var(--font-display)" }}>N</span>
-            </div>
-            <span className="text-lg font-semibold text-white" style={{ fontFamily: "var(--font-display)" }}>
-              Noonan
-            </span>
-          </div>
+          <Image
+            src="/noonan-logo.png"
+            alt="Noonan"
+            width={140}
+            height={40}
+            className="h-8 w-auto brightness-0 invert"
+            priority
+          />
           <a
             href="#download"
             className="bg-white/10 backdrop-blur-sm text-white px-5 py-2 rounded-full text-sm font-medium border border-white/20 hover:bg-white/20 transition-all"
@@ -283,14 +284,13 @@ export default function Home() {
         {/* Footer */}
         <footer className="py-12 px-6 border-t border-[var(--green-deep)]/10 bg-[var(--cream)]">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-[var(--green-fairway)] flex items-center justify-center">
-                <span className="text-white text-xs font-bold" style={{ fontFamily: "var(--font-display)" }}>N</span>
-              </div>
-              <span className="text-sm font-medium text-[var(--green-deep)]" style={{ fontFamily: "var(--font-display)" }}>
-                Noonan
-              </span>
-            </div>
+            <Image
+              src="/noonan-logo.png"
+              alt="Noonan"
+              width={100}
+              height={28}
+              className="h-6 w-auto"
+            />
             <p className="text-sm text-[var(--text-muted)]">
               The only person who actually cares about your golf game.
             </p>
