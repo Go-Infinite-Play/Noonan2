@@ -51,6 +51,8 @@
 		F6A7B8C9DAEB6AFDC5D6E7F8 /* RoundsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsViewModel.swift; sourceTree = "<group>"; };
 		F7A8B9CADBED7BFED6E7F8A9 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		T1A2B3C4D5E647F8A9B0C1D2 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		U1A2B3C4D5E647F8A9B0C1D2 /* Noonan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Noonan.entitlements; sourceTree = "<group>"; };
+		U2A3B4C5D6E748F9B0C1D2E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,8 @@
 		72C1BFD6C0FC4416A7C83937 /* Noonan */ = {
 			isa = PBXGroup;
 			children = (
+				U1A2B3C4D5E647F8A9B0C1D2 /* Noonan.entitlements */,
+				U2A3B4C5D6E748F9B0C1D2E3 /* Info.plist */,
 				9C1901B6D05743F8B54C0CE5 /* NoonanApp.swift */,
 				A1B2C3D4E5F647A8B9C0D1E3 /* Config.swift */,
 				T1A2B3C4D5E647F8A9B0C1D2 /* Theme.swift */,
@@ -363,11 +367,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Noonan/Noonan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Noonan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -391,11 +397,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Noonan/Noonan.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Noonan/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
