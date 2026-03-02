@@ -64,6 +64,21 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
     );
 
+    // Ensure user and player_memory exist (safety net for auth trigger race condition)
+    await serviceClient
+      .from("users")
+      .upsert(
+        { id: user.id, display_name: user.user_metadata?.full_name || "Golfer" },
+        { onConflict: "id", ignoreDuplicates: true }
+      );
+
+    await serviceClient
+      .from("player_memory")
+      .upsert(
+        { user_id: user.id, summary: "" },
+        { onConflict: "user_id", ignoreDuplicates: true }
+      );
+
     // Get or create conversation
     let convId = conversation_id;
     if (!convId) {

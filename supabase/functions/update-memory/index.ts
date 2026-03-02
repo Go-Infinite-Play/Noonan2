@@ -68,6 +68,19 @@ Deno.serve(async (req) => {
       );
     }
 
+    // Ensure player_memory exists (safety net for auth trigger race condition)
+    const safetyClient = createClient(
+      Deno.env.get("SUPABASE_URL")!,
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!
+    );
+
+    await safetyClient
+      .from("player_memory")
+      .upsert(
+        { user_id: user.id, summary: "" },
+        { onConflict: "user_id", ignoreDuplicates: true }
+      );
+
     // Get current memory
     const { data: memory } = await supabase
       .from("player_memory")
@@ -117,11 +130,11 @@ Deno.serve(async (req) => {
 
     await serviceClient
       .from("player_memory")
-      .update({
+      .upsert({
+        user_id: user.id,
         summary: updatedSummary,
         last_updated: new Date().toISOString(),
-      })
-      .eq("user_id", user.id);
+      }, { onConflict: "user_id" });
 
     return new Response(
       JSON.stringify({ message: "Memory updated", summary: updatedSummary }),
