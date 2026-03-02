@@ -39,7 +39,28 @@ class AuthViewModel: ObservableObject {
             )
             isAuthenticated = true
         } catch {
-            print("Sign in error: \(error)")
+            print("Apple sign in error: \(error)")
+        }
+    }
+
+    func signInWithGoogle() async {
+        do {
+            try await supabase.auth.signInWithOAuth(
+                provider: .google,
+                redirectTo: URL(string: "com.noonan.Noonan://login-callback")
+            )
+            // Auth state will be picked up by the onOpenURL handler
+        } catch {
+            print("Google sign in error: \(error)")
+        }
+    }
+
+    func handleDeepLink(_ url: URL) async {
+        do {
+            _ = try await supabase.auth.session(from: url)
+            isAuthenticated = true
+        } catch {
+            print("Deep link auth error: \(error)")
         }
     }
 

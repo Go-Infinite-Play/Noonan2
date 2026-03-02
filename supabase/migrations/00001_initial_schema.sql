@@ -1,9 +1,8 @@
--- Enable UUID generation
-create extension if not exists "uuid-ossp";
+-- Use gen_random_uuid() (built into Postgres 13+, available on all Supabase projects)
 
 -- Courses table (cached from GolfCourseAPI)
 create table courses (
-  id uuid primary key default uuid_generate_v4(),
+  id uuid primary key default gen_random_uuid(),
   external_id text,
   name text not null,
   city text,
@@ -28,7 +27,7 @@ create table users (
 
 -- Rounds table
 create table rounds (
-  id uuid primary key default uuid_generate_v4(),
+  id uuid primary key default gen_random_uuid(),
   user_id uuid not null references users(id) on delete cascade,
   course_id uuid references courses(id),
   score integer,
@@ -43,7 +42,7 @@ create index idx_rounds_date_played on rounds(date_played);
 
 -- Conversations table
 create table conversations (
-  id uuid primary key default uuid_generate_v4(),
+  id uuid primary key default gen_random_uuid(),
   user_id uuid not null references users(id) on delete cascade,
   round_id uuid references rounds(id),
   conversation_type text not null default 'general'
@@ -56,7 +55,7 @@ create index idx_conversations_user_id on conversations(user_id);
 
 -- Messages table
 create table messages (
-  id uuid primary key default uuid_generate_v4(),
+  id uuid primary key default gen_random_uuid(),
   conversation_id uuid not null references conversations(id) on delete cascade,
   role text not null check (role in ('user', 'assistant')),
   content text not null,
@@ -67,7 +66,7 @@ create index idx_messages_conversation_id on messages(conversation_id);
 
 -- Player memory (one per user, evolving summary)
 create table player_memory (
-  id uuid primary key default uuid_generate_v4(),
+  id uuid primary key default gen_random_uuid(),
   user_id uuid not null unique references users(id) on delete cascade,
   summary text not null default '',
   last_updated timestamptz default now()

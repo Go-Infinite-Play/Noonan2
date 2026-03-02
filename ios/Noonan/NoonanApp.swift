@@ -15,6 +15,9 @@ struct NoonanApp: App {
                     AuthView(authVM: authVM)
                 }
             }
+            .onOpenURL { url in
+                Task { await authVM.handleDeepLink(url) }
+            }
         }
     }
 }
