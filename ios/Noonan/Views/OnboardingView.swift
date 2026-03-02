@@ -45,7 +45,7 @@ struct OnboardingView: View {
                 IntroStep(vm: vm, authVM: authVM).tag(3)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
-            .disabled(true) // Disable swipe - use buttons only
+            .allowsHitTesting(true)
         }
         .background(Color(.systemBackground))
     }
