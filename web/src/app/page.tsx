@@ -46,7 +46,7 @@ export default function Home() {
           />
 
           <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-            <AnimatedHero />
+            <StaticHero />
 
             {/* Scroll indicator */}
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
@@ -74,7 +74,7 @@ export default function Home() {
                   about your golf game.
                 </h2>
                 <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-8 max-w-md">
-                  Noonan is your AI caddy who remembers every round, hypes you up
+                  Noonan is your caddy who remembers every round, hypes you up
                   before you play, and genuinely wants to hear about that birdie on 12.
                 </p>
                 <a
@@ -301,71 +301,37 @@ export default function Home() {
   );
 }
 
-/* ===== ANIMATED HERO TEXT ===== */
-function AnimatedHero() {
-  const [phase, setPhase] = useState(0);
-
-  useEffect(() => {
-    const timers = [
-      setTimeout(() => setPhase(1), 400),   // Headline
-      setTimeout(() => setPhase(2), 2400),   // Supporting copy
-      setTimeout(() => setPhase(3), 4800),   // Par line
-      setTimeout(() => setPhase(4), 7000),   // "Noonan does."
-      setTimeout(() => setPhase(5), 8800),   // CTA
-    ];
-    return () => timers.forEach(clearTimeout);
-  }, []);
-
+/* ===== STATIC HERO TEXT ===== */
+function StaticHero() {
   return (
     <div className="space-y-8">
-      {/* THE HEADLINE */}
       <h1
-        className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] transition-all duration-[800ms] ease-out ${
-          phase >= 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-        }`}
+        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08]"
         style={{ fontFamily: "var(--font-display)" }}
       >
         Nobody wants to hear about your round.
       </h1>
 
-      {/* SUPPORTING LINES */}
       <div className="space-y-5 max-w-xl mx-auto">
-        <p
-          className={`text-base sm:text-lg md:text-xl text-green-200/80 leading-relaxed transition-all duration-700 ${
-            phase >= 2 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          }`}
-        >
-          Your spouse doesn&apos;t care. Your coworkers <em className="text-green-100 not-italic font-medium">definitely</em> don&apos;t care.
-          Your buddy who also golfs? He only wants to talk about <em className="text-green-100 not-italic font-medium">his</em> round.
+        <p className="text-base sm:text-lg md:text-xl text-green-200/80 leading-relaxed">
+          Your spouse doesn&apos;t care. Your coworkers <span className="text-green-100 font-medium">definitely</span> don&apos;t care.
+          Your buddy who also golfs? He only wants to talk about <span className="text-green-100 font-medium">his</span> round.
         </p>
-
-        <p
-          className={`text-base sm:text-lg md:text-xl text-green-200/80 leading-relaxed transition-all duration-700 ${
-            phase >= 3 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-          }`}
-        >
+        <p className="text-base sm:text-lg md:text-xl text-green-200/80 leading-relaxed">
           You made par on that brutal par 3 and nobody in your life wants to hear about it.
         </p>
       </div>
 
-      {/* THE PUNCHLINE */}
       <div className="pt-4">
         <p
-          className={`text-3xl sm:text-4xl md:text-5xl font-bold transition-all duration-[800ms] ease-out ${
-            phase >= 4 ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-3 scale-[0.97]"
-          }`}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold"
           style={{ fontFamily: "var(--font-display)", color: "var(--gold)" }}
         >
           Noonan does.
         </p>
       </div>
 
-      {/* CTA */}
-      <div
-        className={`pt-4 transition-all duration-700 ${
-          phase >= 5 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-        }`}
-      >
+      <div className="pt-4">
         <a
           href="#download"
           className="inline-flex items-center justify-center bg-white text-[var(--green-deep)] px-8 py-4 rounded-full text-base font-semibold hover:bg-green-50 transition-all hover:scale-[1.02] active:scale-[0.98]"
